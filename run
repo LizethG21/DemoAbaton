@@ -1,0 +1,8 @@
+export PORT=3000
+export API_URL=http://localhost:3001
+export MAIL_SERVER=170.247.176.84
+export MAIL_PORT=587
+export MAIL_SSL=false
+export MAIL_USER=banorte@ikusicloud.com
+export MAIL_PASS=sTUbEHZ=4P
+node bin/www

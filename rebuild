@@ -1,0 +1,14 @@
+CONTAINER=web
+export PORT=8081
+export API_URL=http://api:3001
+export MAIL_SERVER=170.247.176.84
+export MAIL_PORT=587
+export MAIL_SSL=false
+export MAIL_USER=banorte@ikusicloud.com
+export MAIL_PASS=sTUbEHZ=4P
+export PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+docker rm $CONTAINER --force
+docker rmi $CONTAINER --force
+docker build -t $CONTAINER -f ./Dockerfile .
+docker run -d --name $CONTAINER --net gateway --restart always -e PORT -e API_URL -e MAIL_SERVER -e MAIL_PORT -e MAIL_SSL -e MAIL_USER -e MAIL_PASS -e PUPPETEER_EXECUTABLE_PATH -p $PORT:$PORT $CONTAINER
